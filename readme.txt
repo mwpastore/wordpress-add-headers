@@ -21,11 +21,19 @@ Before reading any further or trying this plugin on your WordPress platforms and
 
 = Notice regarding the functionality of 2.X.X releases =
 
-In Add-Headers releases older than 2.0.0 caching was enabled by default. This resulted in several users, who didn't have the required knowledge about HTTP caching, assuming that the plugin would somehow auto-configure itself according to their web sites' special needs. So, since 2.0.0, no page is allowed to be cached by default and the [configuration](http://www.codetrax.org/projects/wp-add-headers/wiki/Configuration) of this plugin has become mandatory in order to make the dynamic pages cacheable.
+In Add-Headers releases older than 2.0.0 caching was enabled by default. This resulted in several users, who didn't have the required knowledge about HTTP caching, assuming that the plugin would somehow auto-configure itself according to their web sites' special needs. So, since 2.0.0, no page is allowed to be cached by default and the [configuration](http://www.codetrax.org/projects/wp-add-headers/wiki/Configuration) of the plugin has become mandatory in order to make the dynamic pages cacheable.
 
-= Project Information =
+= Official Project Homepage =
 
 The Add-Headers documentation has been moved to the [Add-Headers Development Web Site](http://www.codetrax.org/projects/wp-add-headers/wiki).
+
+= Support =
+
+*Add-Headers* is released without support of any kind.
+
+However, you can still get support free of charge at the [issue tracker](https://github.com/gnotaras/wordpress-add-headers/issues) at Github. Feel free to post your questions, suggestions, bug reports, feature requests about the _Add-Headers_ project (free registration is required in order to post).
+
+The issue tracker at Github is the **recommended support channel** for faster communication.
 
 = Legal Notice =
 
@@ -65,11 +73,17 @@ No screenshots are available at this time.
 
 == Changelog ==
 
+= Notice about getting support =
+
+For faster communication please feel free to post your questions, suggestions, bug reports, feature requests in the [issue tracker](https://github.com/gnotaras/wordpress-add-headers/issues) at Github.
+
+= Changelog Entries =
+
 Please check out the changelog of each release by following the links below. You can also check the [roadmap](http://www.codetrax.org/projects/wp-add-headers/roadmap "Add-Headers Roadmap") regarding future releases of the plugin.
 
 - [2.0.0](http://www.codetrax.org/versions/313)
  - IMPORTANT CHANGE OF THE DEFAULT FUNCTIONALITY: Since the v2.0.0 major release, no page is allowed to be cached by default. Caching needs to be enabled by [configuring](http://www.codetrax.org/projects/wp-add-headers/wiki/Configuration) the plugin.
- - Improved the header generation mechanism.
+ - Improved the header generation mechanism. (New header array format: `['HEADER_NAME'] => 'HEADER_VALUE'`)
  - Added the `remove_pre_existing_headers` option. When enabled, it instructs the plugin to clear any preexisting ETag, Last-Modified, Expires, Cache-Control and Pragma headers before sending its own headers, according to the user defined options.
  - Other minor fixes and improvements.
 - [1.2.1](http://www.codetrax.org/versions/243)
