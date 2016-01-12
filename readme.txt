@@ -83,7 +83,7 @@ Please check out the changelog of each release by following the links below. You
 
 - [2.0.0](http://www.codetrax.org/versions/313)
  - IMPORTANT CHANGE OF THE DEFAULT FUNCTIONALITY: Since the v2.0.0 major release, no page is allowed to be cached by default. Caching needs to be enabled by [configuring](http://www.codetrax.org/projects/wp-add-headers/wiki/Configuration) the plugin.
- - Improved the header generation mechanism. (New header array format: `['HEADER_NAME'] => 'HEADER_VALUE'`)
+ - Improved the header generation mechanism. New header array format: `['HEADER_NAME'] => 'HEADER_VALUE'`
  - Added the `remove_pre_existing_headers` option. When enabled, it instructs the plugin to clear any preexisting ETag, Last-Modified, Expires, Cache-Control and Pragma headers before sending its own headers, according to the user defined options.
  - Other minor fixes and improvements.
 - [1.2.1](http://www.codetrax.org/versions/243)
