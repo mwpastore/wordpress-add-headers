@@ -3,7 +3,7 @@ Contributors: gnotaras
 Donate link: http://bit.ly/wp-add-headers
 Tags: caching, headers, expires, cache-control, last-modified, etag, seo, if-modified-since, if-none-match, if-match, if-range, cache, http, web, server, response, optimize, bandwidth, server load, cpu load
 Requires at least: 3.1.0
-Tested up to: 4.4
+Tested up to: 4.5
 Stable tag: 2.0.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
