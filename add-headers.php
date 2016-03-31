@@ -263,6 +263,21 @@ function addh_set_headers_for_object( $options ) {
         }
     }
 
+    // Check for old content (only if a threshold is set)
+    if ( absint($options['cache_old_content_threshold_seconds']) > 0 ) {
+        // Find the time that determines whether a resource should be treated as 'old content'.
+        // Basically this is the current GM time minus the 'old content threshold in seconds' as set in the option.
+        $threshold_time_unix = absint(gmdate('U')) - absint($options['cache_old_content_threshold_seconds']);
+        // Any content which has been last modified before that time should be treated as old
+        // and the 'cache_old_content_max_age_seconds' option should be used as the caching
+        // timeout, instead of 'cache_max_age_seconds'.
+        // Here we check whether the mtime (last modified time) is older than the threshold time.
+        if ( $mtime < $threshold_time_unix ) {
+            // This content is old. Set the caching timeout to the caching timeout of old content.
+            $options['cache_max_age_seconds'] = $options['cache_old_content_max_age_seconds'];
+        }
+    }
+
     addh_batch_generate_headers( $post, $mtime, $options );
 }
 
@@ -298,6 +313,21 @@ function addh_set_headers_for_archive( $options ) {
     // Retrieve stored time of post object
     $post_mtime = $post->post_modified_gmt;
     $mtime = strtotime( $post_mtime );
+
+    // Check for old content (only if a threshold is set)
+    if ( absint($options['cache_old_content_threshold_seconds']) > 0 ) {
+        // Find the time that determines whether a resource should be treated as 'old content'.
+        // Basically this is the current GM time minus the 'old content threshold in seconds' as set in the option.
+        $threshold_time_unix = absint(gmdate('U')) - absint($options['cache_old_content_threshold_seconds']);
+        // Any content which has been last modified before that time should be treated as old
+        // and the 'cache_old_content_max_age_seconds' option should be used as the caching
+        // timeout, instead of 'cache_max_age_seconds'.
+        // Here we check whether the mtime (last modified time) is older than the threshold time.
+        if ( $mtime < $threshold_time_unix ) {
+            // This content is old. Set the caching timeout to the caching timeout of old content.
+            $options['cache_max_age_seconds'] = $options['cache_old_content_max_age_seconds'];
+        }
+    }
 
     addh_batch_generate_headers( $post, $mtime, $options );
 }
@@ -346,6 +376,8 @@ function addh_headers(){
         'cache_max_age_seconds' => 0,
         'cache_max_age_seconds_for_search_results' => 0,
         'cache_max_age_seconds_for_authenticated_users' => 0,
+        'cache_old_content_threshold_seconds' => 0,
+        'cache_old_content_max_age_seconds' => 0,
         'remove_pre_existing_headers' => false,
     );
     $options = apply_filters( 'addh_options', $default_options );
