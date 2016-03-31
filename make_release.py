@@ -8,7 +8,7 @@ REL_FILES = [
 	'LICENSE',
 #	'README.rst',
     'readme.txt',
-    'uninstall.php',
+#    'uninstall.php',
 ]
 
 REL_DIRS = [
