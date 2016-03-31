@@ -309,9 +309,18 @@ function addh_set_headers_for_archive( $options ) {
 function addh_headers(){
 
     // Early checks
-
-    // If it's an ajax call, stop here.
+    //
+    // Note: These might not be necessary since conditional tags possibly
+    // exclude any processing in the following cases.
+    //
     if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
+        // Check for AJAX call.
+        return;
+    } elseif( defined('XMLRPC_REQUEST') && XMLRPC_REQUEST ) {
+        // Check for XMLRPC request.
+        return;
+    } elseif( defined('REST_REQUEST') && REST_REQUEST ) {
+        // Check for REST request.
         return;
     }
 
