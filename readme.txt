@@ -81,6 +81,9 @@ For faster communication please feel free to post your questions, suggestions, b
 
 Please check out the changelog of each release by following the links below. You can also check the [roadmap](http://www.codetrax.org/projects/wp-add-headers/roadmap "Add-Headers Roadmap") regarding future releases of the plugin.
 
+- [2.0.1](http://www.codetrax.org/versions/314)
+ - This release introduces the concept of setting a different caching timeout on _old_content_. For this reason two new options have been added: [cache_old_content_threshold_seconds](http://www.codetrax.org/projects/wp-add-headers/wiki/Configuration#cache_old_content_threshold_seconds) and [cache_old_content_max_age_seconds](http://www.codetrax.org/projects/wp-add-headers/wiki/Configuration#cache_old_content_max_age_seconds). Please see this [configuration example](http://www.codetrax.org/projects/wp-add-headers/wiki/Configuration#Different-caching-timeout-for-old-content) that demonstrates this functionality.
+ - Minor improvements and fixes.
 - [2.0.0](http://www.codetrax.org/versions/313)
  - IMPORTANT CHANGE OF THE DEFAULT FUNCTIONALITY: Since the v2.0.0 major release, no page is allowed to be cached by default. Caching needs to be enabled by [configuring](http://www.codetrax.org/projects/wp-add-headers/wiki/Configuration) the plugin.
  - Improved the header generation mechanism. New header array format: `['HEADER_NAME'] => 'HEADER_VALUE'`
