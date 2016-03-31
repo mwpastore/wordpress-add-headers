@@ -15,9 +15,9 @@ Legal Notice
 
 Add-Headers is Copyright (c) 2013-2016 George Notaras. All rights reserved.
 
-Permission is granted to use this software under the terms of the `GNU General
-Public License` as published by the Free Software Foundation; either version 3
-of the License, or (at your option) any later version.
+Permission is granted to use this software under the terms of the
+`GNU General Public License` as published by the Free Software Foundation;
+either version 3 of the License, or (at your option) any later version.
 
 .. _`GNU General Public License`: http://www.gnu.org/licenses/gpl-3.0.txt
 
