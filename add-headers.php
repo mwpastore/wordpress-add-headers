@@ -322,6 +322,9 @@ function addh_headers(){
     } elseif( defined('REST_REQUEST') && REST_REQUEST ) {
         // Check for REST request.
         return;
+    } elseif ( is_admin() ) {
+        // Check if we are in the WP admin interface.
+        return;
     }
 
     // Notes
