@@ -2,11 +2,11 @@
 # Copyright George Notaras
 
 REL_FILES = [
-	'add-headers.php',
+    'add-headers.php',
     'index.php',
     'AUTHORS',
-	'LICENSE',
-#	'README.rst',
+    'LICENSE',
+#    'README.rst',
     'readme.txt',
 #    'uninstall.php',
 ]
@@ -49,7 +49,7 @@ def get_name_release():
         if name and release:
             break
     f.close()
-    
+
     if not name:
         raise Exception('Cannot determine plugin name')
     elif not release:
@@ -68,7 +68,7 @@ print 'Creating distribution package...'
 os.mkdir(name)
 # Copy files
 for p_file in REL_FILES:
-	shutil.copy(p_file, os.path.join(name, p_file))
+    shutil.copy(p_file, os.path.join(name, p_file))
 # Copy dirs
 for p_dir in REL_DIRS:
     shutil.copytree(p_dir, os.path.join(name, p_dir))
@@ -80,7 +80,7 @@ d_package = zipfile.ZipFile(d_package_path, 'w', zipfile.ZIP_DEFLATED)
 
 # Append root files
 for p_file in REL_FILES:
-	d_package.write(os.path.join(name, p_file))
+    d_package.write(os.path.join(name, p_file))
 # Append language directory
 for p_dir in REL_DIRS:
     d_package.write(os.path.join(name, p_dir))
