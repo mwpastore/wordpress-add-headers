@@ -4,7 +4,7 @@ Donate link: http://bit.ly/wp-add-headers
 Tags: caching, headers, expires, cache-control, last-modified, etag, seo, if-modified-since, if-none-match, if-match, if-range, cache, http, web, server, response, optimize, bandwidth, server load, cpu load
 Requires at least: 3.1.0
 Tested up to: 4.5
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -81,6 +81,8 @@ For faster communication please feel free to post your questions, suggestions, b
 
 Please check out the changelog of each release by following the links below. You can also check the [roadmap](http://www.codetrax.org/projects/wp-add-headers/roadmap "Add-Headers Roadmap") regarding future releases of the plugin.
 
+- 2.0.2
+ - Added a global _serial_ option that can be manually incremented to invalidate ETags, i.e. when a sitewide change is made.
 - [2.0.1](http://www.codetrax.org/versions/314)
  - This release introduces the concept of setting a different caching timeout on _old_content_. For this reason two new options have been added: [cache_old_content_threshold_seconds](http://www.codetrax.org/projects/wp-add-headers/wiki/Configuration#cache_old_content_threshold_seconds) and [cache_old_content_max_age_seconds](http://www.codetrax.org/projects/wp-add-headers/wiki/Configuration#cache_old_content_max_age_seconds). Please see this [configuration example](http://www.codetrax.org/projects/wp-add-headers/wiki/Configuration#Different-caching-timeout-for-old-content) that demonstrates this functionality.
  - Minor improvements and fixes.
