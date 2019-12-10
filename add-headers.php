@@ -123,7 +123,14 @@ function addh_send_headers( $headers_arr, $options ) {
 function addh_generate_etag_header( $post, $mtime, $options ) {
     global $wp;
     if ( $options['add_etag_header'] === true ) {
-        $to_hash = array( $mtime, $post->post_date_gmt, $post->guid, $post->ID, serialize( $wp->query_vars ) );
+        $to_hash = array(
+            $options['serial'],
+            $mtime,
+            $post->post_date_gmt,
+            $post->guid,
+            $post->ID,
+            serialize( $wp->query_vars )
+        );
         $header_etag_value = sha1( serialize( $to_hash ) );
         // Generate a weak or strong ETag
         if ( $options['generate_weak_etag'] === true ) {
@@ -379,6 +386,7 @@ function addh_headers(){
         'cache_old_content_threshold_seconds' => 0,
         'cache_old_content_max_age_seconds' => 0,
         'remove_pre_existing_headers' => false,
+        'serial' => 0,
     );
     $options = apply_filters( 'addh_options', $default_options );
 
